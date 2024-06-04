@@ -121,7 +121,7 @@ class Endereco {
         this.cep = cep;
         this.numero = numero;
         this.complemento = complemento;
-    }
+    };
 
     //Getters
     public String getNomeDaRua() {
@@ -176,5 +176,78 @@ class Endereco {
     //toString
     public String toString() {
         return String.format("Nome da Rua: %s\nCidade: %s\nEstado: %s\nCEP: %s\nNúmero: %s\nComplemento: %s", this.getNomeDaRua(), this.getCidade(), this.getEstado(), this.getCep(), this.getNumero(), this.getComplemento());
-    }
+    };
+};
+
+class Data {
+
+    //Atributos
+    private int dia;
+    private int mes;
+    private int ano;
+
+    //Construtor
+    public Data(int dia, int mes, int ano) {
+        if (validaData(dia, mes, ano)) {
+            this.dia = dia;
+            this.mes = mes;
+            this.ano = ano;
+        } else {
+            this.dia = 1;
+            this.mes = 1;
+            this.ano = 2000;
+        }
+    };
+
+    //Validação da data
+    private boolean validaData(int dia, int mes, int ano) {
+        if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || ano < 1) {
+            return false;
+        } else if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
+            if (dia > 30) {
+                return false;
+            }
+        } else if (mes == 2) {
+            //Ano bissexto
+            if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)) {
+                if (dia > 29) {
+                    return false;
+                }
+            } else if (dia > 28) {
+                return false;
+            }
+        }
+        return true;
+    };
+
+    //Getters
+    public int getDia() {
+        return this.dia;
+    };
+
+    public int getMes() {
+        return this.mes;
+    };
+
+    public int getAno() {
+        return this.ano;
+    };
+
+    //Setters
+    public void setDia(int dia) {
+        this.dia = dia;
+    };
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    };
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    };
+
+    //toString
+    public String toString() {
+        return String.format("Dia: %d\nMês: %d\nAno: %d", this.getDia(), this.getMes(), this.getAno());
+    };
 }
