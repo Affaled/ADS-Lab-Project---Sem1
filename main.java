@@ -38,7 +38,7 @@ class Loja {
         this.quantidadeFuncionarios = quantidadeFuncionarios;
     };
 
-    public void setSalariobaseFuncionario(double salarioBaseFuncionario) {
+    public void setSalarioBaseFuncionario(double salarioBaseFuncionario) {
         this.salarioBaseFuncionario = salarioBaseFuncionario;
     };
 
@@ -109,15 +109,17 @@ class Endereco {
     private String nomeDaRua;
     private String cidade;
     private String estado;
+    private String pais;
     private String cep;
     private String numero;
     private String complemento;
 
     //Construtor
-    public Endereco(String nomeDaRua, String cidade, String estado, String cep, String numero, String complemento) {
+    public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero, String complemento) {
         this.nomeDaRua = nomeDaRua;
         this.cidade = cidade;
         this.estado = estado;
+        this.pais = pais;
         this.cep = cep;
         this.numero = numero;
         this.complemento = complemento;
@@ -135,6 +137,10 @@ class Endereco {
     public String getEstado() { 
         return this.estado;
     }; 
+
+    public String getPais() {
+        return this.pais;
+    };
 
     public String getCep() {
         return this.cep;
@@ -161,6 +167,10 @@ class Endereco {
         this.estado = estado;
     };
 
+    public void setPais(String pais) {
+        this.pais = pais;
+    };
+
     public void setCep(String cep) {
         this.cep = cep;
     };
@@ -175,7 +185,7 @@ class Endereco {
 
     //toString
     public String toString() {
-        return String.format("Nome da Rua: %s\nCidade: %s\nEstado: %s\nCEP: %s\nNúmero: %s\nComplemento: %s", this.getNomeDaRua(), this.getCidade(), this.getEstado(), this.getCep(), this.getNumero(), this.getComplemento());
+        return String.format("Nome da Rua: %s\nCidade: %s\nEstado: %s\nPaís: %s\nCEP: %s\nNúmero: %s\nComplemento: %s", this.getNomeDaRua(), this.getCidade(), this.getEstado(), this.getPais(), this.getCep(), this.getNumero(), this.getComplemento());
     };
 };
 
@@ -208,8 +218,7 @@ class Data {
                 return false;
             }
         } else if (mes == 2) {
-            //Ano bissexto
-            if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)) {
+            if (verificaAnoBissexto()) {
                 if (dia > 29) {
                     return false;
                 }
@@ -219,6 +228,16 @@ class Data {
         }
         return true;
     };
+
+    //Ano bissexto
+    public boolean verificaAnoBissexto() {
+        if (ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0)) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
 
     //Getters
     public int getDia() {
