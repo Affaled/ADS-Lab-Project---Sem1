@@ -1,11 +1,11 @@
 class Loja {
 
-    // atributos da classe Loja
+    //Atributos
     private String nome;
     private int quantidadeFuncionarios;
     private double salarioBaseFuncionario;
 
-    // construtores da classe Loja
+    //Construtores
     public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
@@ -46,8 +46,8 @@ class Loja {
     public String toString() {
         return String.format("Nome: %s\nQuantidade de funcionários: %d\nSalário base de funcionários: %.2f", this.getNome(), this.getQuantidadeFuncionarios(), this.getSalarioBaseFuncionario());
     };
-
-    //gastos com salário
+ 
+    //gastos com salário 
     public double gastosComSalario() {
         if (this.getSalarioBaseFuncionario() == -1) {
             return -1;
@@ -64,5 +64,41 @@ class Loja {
         } else {
             return 'G';
         }
+    };
+};
+
+class Produto {
+
+    //Atributos
+    private String nome;
+    private double preco;
+
+    //Construtor
+    public Produto(String nome, double preco) {
+        this.nome = nome;
+        this.preco = preco;
+    };
+
+    //Getters
+    public String getNome() {
+        return this.nome;
+    };
+
+    public double getPreco() {
+        return this.preco;
+    };
+
+    //Setters
+    public void setNome(String nome) {
+        this.nome = nome;
+    };
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    };
+
+    //toString
+    public String toString() {
+        return String.format("Nome: %s\nPreço: %.2f", this.getNome(), this.getPreco());
     };
 }
