@@ -2,15 +2,16 @@ import java.util.Scanner;
 
 class Loja {
 
-    //Atributos
+    // Atributos
     private String nome;
     private int quantidadeFuncionarios;
     private double salarioBaseFuncionario;
     private Endereco endereco;
     private Data dataFundacao;
 
-    //Construtores
-    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao) {
+    // Construtores
+    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
+            Data dataFundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = salarioBaseFuncionario;
@@ -22,7 +23,7 @@ class Loja {
         this(nome, quantidadeFuncionarios, -1, endereco, dataFundacao);
     };
 
-    //Getters
+    // Getters
     public String getNome() {
         return this.nome;
     };
@@ -43,7 +44,7 @@ class Loja {
         return this.dataFundacao;
     };
 
-    //Setters
+    // Setters
     public void setNome(String nome) {
         this.nome = nome;
     };
@@ -64,12 +65,15 @@ class Loja {
         this.dataFundacao = dataFundacao;
     };
 
-    //toString
+    // toString
     public String toString() {
-        return String.format("Nome: %s\nQuantidade de funcionários: %d\nSalário base de funcionários: %.2f\nEndereço: %s\nData de fundação: %s", this.getNome(), this.getQuantidadeFuncionarios(), this.getSalarioBaseFuncionario(), this.getEndereco(), this.getDataFundacao());
+        return String.format(
+                "Nome: %s\nQuantidade de funcionários: %d\nSalário base de funcionários: %.2f\nEndereço: %s\nData de fundação: %s",
+                this.getNome(), this.getQuantidadeFuncionarios(), this.getSalarioBaseFuncionario(), this.getEndereco(),
+                this.getDataFundacao());
     };
- 
-    //gastos com salário 
+
+    // gastos com salário
     public double gastosComSalario() {
         if (this.getSalarioBaseFuncionario() == -1) {
             return -1;
@@ -77,7 +81,7 @@ class Loja {
         return this.getQuantidadeFuncionarios() * this.getSalarioBaseFuncionario();
     };
 
-    //tamanho da loja
+    // tamanho da loja
     public char tamanhoDaLoja() {
         if (this.getQuantidadeFuncionarios() < 10) {
             return 'P';
@@ -91,19 +95,19 @@ class Loja {
 
 class Produto {
 
-    //Atributos
+    // Atributos
     private String nome;
     private double preco;
     private Data dataValidade;
 
-    //Construtor
+    // Construtor
     public Produto(String nome, double preco, Data dataValidade) {
         this.nome = nome;
         this.preco = preco;
         this.dataValidade = dataValidade;
     };
 
-    //Getters
+    // Getters
     public String getNome() {
         return this.nome;
     };
@@ -116,7 +120,7 @@ class Produto {
         return this.dataValidade;
     };
 
-    //Setters
+    // Setters
     public void setNome(String nome) {
         this.nome = nome;
     };
@@ -129,7 +133,7 @@ class Produto {
         this.dataValidade = dataValidade;
     };
 
-    //Vencimento
+    // Vencimento
     public boolean estaVencido(Data data) {
         if (this.getDataValidade().getAno() < 2023) {
             return true;
@@ -145,15 +149,16 @@ class Produto {
         return false;
     }
 
-    //toString
+    // toString
     public String toString() {
-        return String.format("Nome: %s\nPreço: %.2f\nData de validade: %s\nVencido: %b", this.getNome(), this.getPreco(), this.getDataValidade().toString(), this.estaVencido(this.getDataValidade()));
+        return String.format("Nome: %s\nPreço: %.2f\nData de validade: %s\nVencido: %b", this.getNome(),
+                this.getPreco(), this.getDataValidade().toString(), this.estaVencido(this.getDataValidade()));
     };
 };
 
 class Endereco {
 
-    //Atributos
+    // Atributos
     private String nomeDaRua;
     private String cidade;
     private String estado;
@@ -162,8 +167,9 @@ class Endereco {
     private String numero;
     private String complemento;
 
-    //Construtor
-    public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero, String complemento) {
+    // Construtor
+    public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero,
+            String complemento) {
         this.nomeDaRua = nomeDaRua;
         this.cidade = cidade;
         this.estado = estado;
@@ -173,7 +179,7 @@ class Endereco {
         this.complemento = complemento;
     };
 
-    //Getters
+    // Getters
     public String getNomeDaRua() {
         return this.nomeDaRua;
     };
@@ -182,9 +188,9 @@ class Endereco {
         return this.cidade;
     };
 
-    public String getEstado() { 
+    public String getEstado() {
         return this.estado;
-    }; 
+    };
 
     public String getPais() {
         return this.pais;
@@ -202,7 +208,7 @@ class Endereco {
         return this.complemento;
     };
 
-    //Setters
+    // Setters
     public void setNomeDaRua(String nomeDaRua) {
         this.nomeDaRua = nomeDaRua;
     };
@@ -231,20 +237,22 @@ class Endereco {
         this.complemento = complemento;
     };
 
-    //toString
+    // toString
     public String toString() {
-        return String.format("Nome da Rua: %s\nCidade: %s\nEstado: %s\nPaís: %s\nCEP: %s\nNúmero: %s\nComplemento: %s", this.getNomeDaRua(), this.getCidade(), this.getEstado(), this.getPais(), this.getCep(), this.getNumero(), this.getComplemento());
+        return String.format("Nome da Rua: %s\nCidade: %s\nEstado: %s\nPaís: %s\nCEP: %s\nNúmero: %s\nComplemento: %s",
+                this.getNomeDaRua(), this.getCidade(), this.getEstado(), this.getPais(), this.getCep(),
+                this.getNumero(), this.getComplemento());
     };
 };
 
 class Data {
 
-    //Atributos
+    // Atributos
     private int dia;
     private int mes;
     private int ano;
 
-    //Construtor
+    // Construtor
     public Data(int dia, int mes, int ano) {
         if (validaData(dia, mes, ano)) {
             this.dia = dia;
@@ -257,7 +265,7 @@ class Data {
         }
     };
 
-    //Validação da data
+    // Validação da data
     private boolean validaData(int dia, int mes, int ano) {
         if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || ano < 1) {
             return false;
@@ -277,7 +285,7 @@ class Data {
         return true;
     };
 
-    //Ano bissexto
+    // Ano bissexto
     public boolean verificaAnoBissexto() {
         if (ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0)) {
             return true;
@@ -286,8 +294,7 @@ class Data {
         }
     };
 
-
-    //Getters
+    // Getters
     public int getDia() {
         return this.dia;
     };
@@ -300,7 +307,7 @@ class Data {
         return this.ano;
     };
 
-    //Setters
+    // Setters
     public void setDia(int dia) {
         this.dia = dia;
     };
@@ -313,7 +320,7 @@ class Data {
         this.ano = ano;
     };
 
-    //toString
+    // toString
     public String toString() {
         return String.format("Dia: %d\nMês: %d\nAno: %d", this.getDia(), this.getMes(), this.getAno());
     };
@@ -339,7 +346,6 @@ public class Principal {
                     System.out.println("Digite a quantidade de funcionários:");
                     int quantidadeFuncionarios = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.println("Digite o salario base de funcionários:");
                     System.out.println("Digite o endereço da loja:");
                     System.out.println("Nome da rua:");
                     String nomeRua = scanner.nextLine();
@@ -364,6 +370,9 @@ public class Principal {
                     Data dataFundacao = new Data(diaFundacao, mesFundacao, anoFundacao);
                     loja = new Loja(nomeLoja, quantidadeFuncionarios, enderecoLoja, dataFundacao);
                     System.out.println("Loja criada com sucesso!");
+                    if (loja != null) {
+                        System.out.println(loja.toString());
+                    }
                     break;
                 case 2:
                     System.out.println("Digite o nome do produto:");
@@ -379,20 +388,18 @@ public class Principal {
                     Data dataValidade = new Data(diaValidade, mesValidade, anoValidade);
                     produto = new Produto(nomeProduto, precoProduto, dataValidade);
                     System.out.println("Produto criado com sucesso!");
+                    if (produto != null) {
+                        System.out.println("Produto está vencido? "
+                                + (produto.estaVencido(new Data(20, 10, 2023)) ? "PRODUTO VENCIDO"
+                                        : "PRODUTO NÃO VENCIDO"));
+                    }
                     break;
                 case 3:
                     System.out.println("Saindo...");
                     return;
                 default:
                     System.out.println("Opção inválida.");
-            }
-
-            if (produto != null) {
-                System.out.println("Produto está vencido? " + (produto.estaVencido(new Data(20, 10, 2023)) ? "PRODUTO VENCIDO" : "PRODUTO NÃO VENCIDO"));
-            }
-
-            if (loja != null) {
-                System.out.println(loja.toString());
+                    break;
             }
         }
     }
