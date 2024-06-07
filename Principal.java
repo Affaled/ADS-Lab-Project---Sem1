@@ -326,6 +326,147 @@ class Data {
     };
 };
 
+class Cosmetico extends Loja {
+
+    // Atributos
+    private double taxaComercializacao;
+
+    // Construtor
+    public Cosmetico(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
+            Data dataFundacao, double taxaComercializacao) {
+
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
+        this.taxaComercializacao = taxaComercializacao;
+    }
+
+    // Getters
+    public double getTaxaComercializacao() {
+        return this.taxaComercializacao;
+    };
+
+    // Setters
+    public void setTaxaComercializacao(double taxaComercializacao) {
+        this.taxaComercializacao = taxaComercializacao;
+    }
+
+    // toString
+    public String toString() {
+        return String.format("%s\nTaxa de Comercialização: %.2f", super.toString(), this.getTaxaComercializacao());
+    }
+};
+
+class Vestuario extends Loja {
+
+    // Atributos
+    private boolean produtosImportados;
+
+    // Construtor
+    public Vestuario(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
+            Data dataFundacao, boolean produtosImportados) {
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
+        this.produtosImportados = produtosImportados;
+    };
+
+    // Getters
+    public boolean getProdutosImportados() {
+        return this.produtosImportados;
+    };
+
+    // Setters
+    public void setProdutosImportados(boolean produtosImportados) {
+        this.produtosImportados = produtosImportados;
+    };
+
+    // toString
+    public String toString() {
+        return String.format("%s\nProdutos Importados: %s", super.toString(), this.getProdutosImportados());
+    };
+};
+
+class Bijuteria extends Loja {
+
+    // Atributos
+    private double metaVendas;
+
+    // Construtor
+    public Bijuteria(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
+            Data dataFundacao, double metaVendas) {
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
+        this.metaVendas = metaVendas;
+    };
+
+    // Getters
+    public double getMetaVendas() {
+        return this.metaVendas;
+    };
+
+    // Setters
+    public void setMetaVendas(double metaVendas) {
+        this.metaVendas = metaVendas;
+    };
+
+    // toString
+    public String toString() {
+        return String.format("%s\nMeta de Vendas: %.2f", super.toString(), this.getMetaVendas());
+    };
+};
+
+class Alimentacao extends Loja {
+
+    // Atributos
+    private Data dataAlvara;
+
+    // Construtor
+    public Alimentacao(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
+            Data dataFundacao, Data dataAlvara) {
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
+        this.dataAlvara = dataAlvara;
+    };
+
+    // Getters
+    public Data getDataAlvara() {
+        return this.dataAlvara;
+    };
+
+    // Setters
+    public void setDataAlvara(Data dataAlvara) {
+        this.dataAlvara = dataAlvara;
+    };
+
+    // toString
+    public String toString() {
+        return String.format("%s\nData de Alvara: %s", super.toString(), this.getDataAlvara());
+    };
+};
+
+class Informatica extends Loja {
+
+    // Atributos
+    private double seguroEletronicos;
+
+    // Construtor
+    public Informatica(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
+            Data dataFundacao, double seguroEletronicos) {
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
+        this.seguroEletronicos = seguroEletronicos;
+    };
+
+    // Getters
+    public double getSeguroEletronicos() {
+        return this.seguroEletronicos;
+    };
+
+    // Setters
+    public void setSeguroEletronicos(double seguroEletronicos) {
+        this.seguroEletronicos = seguroEletronicos;
+    };
+
+    // toString
+    public String toString() {
+        return String.format("%s\nSeguro de Eletronicos: %.2f", super.toString(), this.getSeguroEletronicos());
+    };
+};
+
 public class Principal {
 
     public static void main(String[] args) {
