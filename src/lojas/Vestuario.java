@@ -16,7 +16,7 @@ public class Vestuario extends Loja {
     }
 
     public void setProdutosImportados(boolean produtosImportados) {
-        this.getProdutosImportados();
+        this.produtosImportados = produtosImportados;
     }
 
     @Override

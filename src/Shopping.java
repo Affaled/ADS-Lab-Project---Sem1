@@ -25,7 +25,7 @@ public class Shopping {
     }
 
     public Endereco getEndereco() {
-        return this.endereco;
+        return endereco;
     }
 
     public void setEndereco(Endereco endereco) {

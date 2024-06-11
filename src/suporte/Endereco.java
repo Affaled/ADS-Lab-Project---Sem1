@@ -1,23 +1,23 @@
 package src.suporte;
 
 public class Endereco {
-    private String numero;
     private String nomeDaRua;
-    private String complemento;
     private String cidade;
     private String estado;
     private String pais;
     private String cep;
+    private String numero;
+    private String complemento;
 
-    public Endereco(String numero, String nomeDaRua, String complemento, String cidade, String estado, String pais,
-            String cep) {
-        this.numero = numero;
+    public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero,
+            String complemento) {
         this.nomeDaRua = nomeDaRua;
-        this.complemento = complemento;
         this.cidade = cidade;
         this.estado = estado;
         this.pais = pais;
         this.cep = cep;
+        this.numero = numero;
+        this.complemento = complemento;
     }
 
     public String getNomeDaRua() {
